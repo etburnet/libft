@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/17 15:34:48 by eburnet           #+#    #+#             */
+/*   Updated: 2023/10/17 17:01:08 by eburnet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+/* char my_function(unsigned int index, char c) {
+	if (index % 2 == 0)
+		c -= 32;
+	return (c);
+} */
+
+int	ft_strlen(char	*str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		i;
+	char	*str;
+	char	*newstr;
+
+	i = 0;
+	str = (char *)s;
+	newstr = NULL;
+	newstr = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (newstr == NULL)
+		return (NULL);
+	while (str[i] != '\0')
+	{
+		newstr[i] = f(i, str[i]);
+		i++;
+	}
+	newstr[i] = '\0';
+	return (newstr);
+}
+
+/* #include <stdio.h>
+int	main()
+{
+	char str[] = "salut";
+	printf("%s\n", ft_strmapi(str, my_function));
+} */

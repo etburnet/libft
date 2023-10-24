@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/09 11:41:43 by eburnet           #+#    #+#             */
+/*   Updated: 2023/10/09 16:04:23 by eburnet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	char	*s;
+	char	*d;
+	size_t	i;
+
+	s = (char *)src;
+	d = (char *)dest;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (d);
+}
+
+/* #include <stdio.h>
+int	main()
+{
+	char str[50] = "GeeksForGeeks is for programming geeks.";
+	char str2[50];
+	ft_memcpy(str2, str, 5);
+	printf("%s", str2);
+} */
