@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:58:47 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/24 12:08:49 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/10/24 14:25:33 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 		return (0);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	*str_a = "Salut gabin";
 	char	*str_b = "Salut ethan";
 
 	printf("%d", ft_strnequ(str_a, str_b, 5));
-}
+} */
+
