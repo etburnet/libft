@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:30:20 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/26 15:59:05 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/10/26 19:36:24 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,31 @@ int	ft_count_words(char *s, char c)
 	return (word_count);
 }
 
-char	**ft_separation(char *str, char **result, char c)
+int	find_max_word_length(const char *str, char c) 
+{
+    int	max_word_length;
+	int	word_length;
+    int	i;
+
+	max_word_length = 0;
+	word_length = 0;
+	i = 0;
+    while (str[i] != '\0') 
+	{
+        while (str[i] != c && str[i] != '\0') 
+		{
+            word_length++;
+            i++;
+        }
+        if (word_length > max_word_length) 
+			max_word_length = word_length;
+        if (str[i] != '\0')
+            i++;
+    }
+    return (max_word_length);
+}
+
+char	**ft_word_separator(char *str, char **result, char c)
 {
 	int		i;
 	int		j;
@@ -69,21 +93,25 @@ char	**ft_strsplit(char const *s, char c)
 	int		word_count;
 	char	**result;
 	int		i;
+	int		word_length;
 
 	i = 0;
 	str = (char *)s;
+	word_length = find_max_word_length(str, c);
 	word_count = ft_count_words(str, c);
+	result = NULL;
 	result = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (result == NULL)
 		return (NULL);
 	while (i <= word_count)
 	{
-		result[i] = (char *)malloc(257);
+		result[i] = NULL;
+		result[i] = (char *)malloc(word_length);
 		if (result[i] == NULL)
 			return (NULL);
 		i++;
 	}
-	return (ft_separation(str, result, c));
+	return (ft_word_separator(str, result, c));
 }
 
 #include <stdio.h>
