@@ -6,9 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:33:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/25 15:29:13 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 16:20:26 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+EDITED
 
 #include <string.h>
 #include <stdlib.h>

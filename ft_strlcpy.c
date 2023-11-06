@@ -1,52 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 17:25:51 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 15:53:16 by eburnet          ###   ########.fr       */
+/*   Created: 2023/11/06 14:27:22 by eburnet           #+#    #+#             */
+/*   Updated: 2023/11/06 15:11:03 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdlib.h>
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *src)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i] != '\0')
 		i++;
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
+int	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
-	int		slen;
-	char	*str;
-	char	*cpy;
+	unsigned int	i;
+	unsigned int	len;
+	char			*s;
 
-	str = (char *)s;
-	slen = ft_strlen(str);
-	cpy = (char *)malloc(slen + 1);
+	s = (char *)src;
 	i = 0;
-	if (cpy == NULL)
-		return (NULL);
-	while (str[i] != '\0')
+	len = ft_strlen(s);
+	while (s[i] && i < size - 1)
 	{
-		cpy[i] = str[i];
+		dst[i] = s[i];
 		i++;
 	}
-	cpy[i] = '\0';
-	return (cpy);
+	dst[i] = '\0';
+	while (i < size)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (len);
 }
 
 /* #include <stdio.h>
-int	main(void)
+int main()
 {
-	printf("%s\n", ft_strdup("Salut guys"));
+	char dest[15];
+	char src[] = "salut !";
+	printf("%d", ft_strlcpy(dest, src, 2));
 } */

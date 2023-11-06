@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:37:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/09 16:02:33 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 14:21:49 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	*ft_bzero(void *s, size_t n)
 		str++;
 		n--;
 	}
+	return (str);
 }
 
 /* #include <stdio.h>
