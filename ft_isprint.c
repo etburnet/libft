@@ -6,11 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:13:49 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/10 11:30:13 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:19:53 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
@@ -21,6 +21,6 @@ int	ft_isprint(char c)
 /* #include <stdio.h>
 int main()
 {
-	printf("%d", ft_isprint('1'));
+	printf("%d", ft_isprint(49));
 	return 0;
 } */

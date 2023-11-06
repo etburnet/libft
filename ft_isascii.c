@@ -6,11 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:07:47 by eburnet           #+#    #+#             */
-/*   Updated: 2023/09/07 09:41:00 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:19:11 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
@@ -21,6 +21,6 @@ int	ft_isascii(char c)
 /* #include <stdio.h>
 int main()
 {
-	printf("%d", ft_isascii('a'));
+	printf("%d", ft_isascii(97));
 	return 0;
 } */

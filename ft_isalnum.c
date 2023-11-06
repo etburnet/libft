@@ -6,11 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:02:59 by eburnet           #+#    #+#             */
-/*   Updated: 2023/09/07 09:39:58 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:18:45 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	if (((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) || (c >= 48 && c <= 57))
 		return (1);
@@ -21,6 +21,6 @@ int	ft_isalnum(char c)
 /* #include <stdio.h>
 int main()
 {
-	printf("%d", ft_isalnum('z'));
+	printf("%d", ft_isalnum(122));
 	return 0;
 } */

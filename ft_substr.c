@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 11:16:59 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/09 17:57:10 by eburnet          ###   ########.fr       */
+/*   Created: 2023/10/24 14:58:41 by eburnet           #+#    #+#             */
+/*   Updated: 2023/11/06 12:09:11 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, int n)
+#include <string.h>
+#include <stdlib.h>
+
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*result;
+	size_t	i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	result = NULL;
+	result = malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		dest[i] = src[i];
+		result[i] = s[start + i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	result[i] = '\0';
+	return (result);
 }
 
 /* #include <stdio.h>
-int main(void)
+int	main(void)
 {
-	char *src = "Salut";
-	char dest [5];
-
-	printf("%s", ft_strncpy(dest, src, 3));
-	return 0;
+	char str[] = "Salut cv ou quoi ?";
+	printf("%s", ft_strsub(str, 25, 2));
 } */
