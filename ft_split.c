@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:30:20 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 13:54:04 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 16:50:23 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	**ft_word_separator(char *str, char **result, char c)
 	return (result);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	*str;
 	int		word_count;
@@ -117,7 +117,7 @@ char	**ft_strsplit(char const *s, char c)
 /* #include <stdio.h>
 int	main()
 {
-	char **result = ft_strsplit("YO_cv__les__gars__", '_');
+	char **result = ft_split("YO_cv__les__gars__", '_');
 	int i = 0;
 	while (result[i] != NULL) {
 		printf("Partie %d : %s\n", i, result[i]);
