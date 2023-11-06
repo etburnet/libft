@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:30:20 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 11:57:07 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:29:46 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,28 @@ int	ft_count_words(char *s, char c)
 	return (word_count);
 }
 
-int	find_max_word_length(const char *str, char c) 
+int	find_max_word_length(const char *str, char c)
 {
-    int	max_word_length;
+	int	max_word_length;
 	int	word_length;
-    int	i;
+	int	i;
 
 	max_word_length = 0;
 	word_length = 0;
 	i = 0;
-    while (str[i] != '\0') 
+	while (str[i] != '\0')
 	{
-        while (str[i] != c && str[i] != '\0') 
+		while (str[i] != c && str[i] != '\0')
 		{
-            word_length++;
-            i++;
-        }
-        if (word_length > max_word_length) 
+			word_length++;
+			i++;
+		}
+		if (word_length > max_word_length)
 			max_word_length = word_length;
-        if (str[i] != '\0')
-            i++;
-    }
-    return (max_word_length);
+		if (str[i] != '\0')
+			i++;
+	}
+	return (max_word_length);
 }
 
 char	**ft_word_separator(char *str, char **result, char c)
@@ -114,7 +114,7 @@ char	**ft_strsplit(char const *s, char c)
 	return (ft_word_separator(str, result, c));
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main()
 {
 	char **result = ft_strsplit("YO_cv__les__gars__", '_');
@@ -123,4 +123,4 @@ int	main()
 		printf("Partie %d : %s\n", i, result[i]);
 		i++;
 	}
-}
+} */
