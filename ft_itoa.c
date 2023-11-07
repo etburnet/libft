@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:35:40 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 16:39:38 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 17:14:31 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ int	ft_count_digits(int n)
 	int	i;
 
 	i = 0;
-	if (n == 0)
-	{
-		return (1);
-	}
 	while (n != 0)
 	{
 		n = n / 10;
 		i++;
 	}
+	if (i == 0)
+		i = 1;
 	return (i);
 }
 
@@ -38,21 +36,20 @@ char	*ft_itoa(int n)
 	int		size;
 
 	size = ft_count_digits(n);
-	is_negative = 0;
-	str = NULL;
-	str = malloc(sizeof(char) * (10 + 1));
+	is_negative = (n < 0);
+	if (n == 0)
+		size = 1;
+	str = malloc(sizeof(char) * (size + is_negative + 1));
 	if (str == NULL)
 		return (NULL);
-	if (n < 0)
-	{
-		is_negative = 1;
-		n = -n;
-		str[0] = '-';
-	}
 	str[size + is_negative] = '\0';
-	while (size > 0)
+	if (n < 0)
+		str[0] = '-';
+	if (n == 0)
+		str[0] = '0';
+	while (n != 0)
 	{
-		str[size + is_negative - 1] = n % 10 + 48;
+		str[size + is_negative - 1] = (n % 10) * (is_negative ? -1 : 1) + 48;
 		n = n / 10;
 		size--;
 	}
