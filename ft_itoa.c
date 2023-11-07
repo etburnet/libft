@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:35:40 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 15:09:31 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 16:30:13 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ char	*ft_itoa(int n)
 /* #include <stdio.h>
 int main()
 {
-	printf("%s", ft_itoa(-245));
+	printf("%s", ft_itoa(0));
 } */
