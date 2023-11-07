@@ -6,11 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:23:33 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:23:54 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 12:55:46 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

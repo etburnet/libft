@@ -6,22 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:35:07 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:22:19 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:11:32 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strnstr(const char *str_a, const char *str_b, size_t n)
 {
@@ -41,10 +31,10 @@ char	*ft_strnstr(const char *str_a, const char *str_b, size_t n)
 			i++;
 			j++;
 		}
-		if (j == n)
-			return (&str[i - n]);
-		i++;
+		if (j == (size_t)ft_strlen(substr))
+			return (&str[i - j]);
 		j = 0;
+		i++;
 	}
 	return (NULL);
 }
@@ -52,9 +42,9 @@ char	*ft_strnstr(const char *str_a, const char *str_b, size_t n)
 /* #include <stdio.h>
 int	main(void)
 {
-	char	*str_a = "Salut coucou gab, cv les gars ?";
+	char	*str_a = "Salut cv coucou gab, cv les gars ?";
 	char	*str_b = "cv";
-	int		size = 3;
+	int		size = 10;
 
 	printf("%s", ft_strnstr(str_a, str_b, size));
 } */

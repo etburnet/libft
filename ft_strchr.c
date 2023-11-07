@@ -6,12 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:57:08 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:22:50 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 12:57:19 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

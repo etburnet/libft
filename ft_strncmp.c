@@ -6,12 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:11:05 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:22:22 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 12:58:02 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,23 +6,13 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:33:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:22:12 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:46:06 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include <libft.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 int	ft_is_set(char c, char const *set)
 {

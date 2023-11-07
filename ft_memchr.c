@@ -6,22 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:03:46 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:23:21 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:47:19 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -7,5 +7,6 @@
 		"unistd.h": "c",
 		"functional": "c",
 		"libft.h": "c"
-	}
+	},
+	"C_Cpp.errorSquiggles": "enabled"
 }

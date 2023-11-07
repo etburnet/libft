@@ -6,11 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:19:23 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:21:43 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 12:58:16 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	ft_toupper(char c)
 {

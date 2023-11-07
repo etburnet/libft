@@ -6,22 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:27:22 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:22:33 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:11:44 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
-
-unsigned int	ft_strlen(char *src)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 int	ft_strlcpy(char *dst, const char *src, size_t size)
 {

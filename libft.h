@@ -6,13 +6,13 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:06:52 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 11:46:42 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:00:28 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <string.h>
+# define LIBFT_H
+# include <string.h>
 
 int		ft_atoi(const char *nptr);
 void	*ft_bzero(void *s, size_t n);
