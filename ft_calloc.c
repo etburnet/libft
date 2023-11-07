@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:47:40 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 16:47:22 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 17:02:17 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (tab);
 }
 
-int	main()
+/* int	main()
 {
 	ft_calloc(5, 5);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:33:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 17:01:36 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 10:57:54 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,44 +23,49 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-TO EDIT
 int	ft_is_set(char c, char const *set)
 {
-	return (c == set);
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*result;
-	char	*str;
-	int		i;
-	int		j;
-	int		strlen;
+	size_t	start;
+	size_t	end;
+	size_t	total;
+	size_t	i;
+	char	*trimmed;
 
+	start = 0;
 	i = 0;
-	j = 0;
-	str = (char *)s1;
-	strlen = ft_strlen(str);
-	result = NULL;
-	result = malloc(sizeof(char) * (strlen + 1));
-	if (result == NULL)
+	end = ft_strlen((char *)s1);
+	trimmed = NULL;
+	while (s1[start] && ft_is_set(s1[start], set))
+		start++;
+	while (end > start && ft_is_set(s1[end - 1], set))
+		end--;
+	total = end - start;
+	trimmed = malloc(sizeof(char) * (total + 1));
+	if (trimmed == NULL)
 		return (NULL);
-	if (!ft_is_set(str[0]) || !ft_is_set(str[strlen -1]))
-		return ((char *)s1);
-	while (ft_is_set(str[i]))
+	while (i <= total)
+	{
+		trimmed[i] = s1[start + i];
 		i++;
-	strlen -= 1;
-	while ((ft_is_set(str[strlen])))
-		strlen--;
-	while (str[i] != '\0' && i <= strlen)
-		result[j++] = str[i++];
-	result[j] = '\0';
-	return (result);
+	}
+	trimmed[total] = '\0';
+	return (trimmed);
 }
 
 /* #include <stdio.h>
 int main(void)
 {
-	char str[] = " Salut    les gars cv   ? ";
-	printf("%s", ft_strtrim(str, ' '));
+	char str[] = "AQSalut   AQ les gars cv   ?AQAQ";
+	printf("%s", ft_strtrim(str, "AQ"));
 } */
