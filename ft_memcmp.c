@@ -6,11 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:38:25 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/10 12:02:22 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:23:18 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <libft.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

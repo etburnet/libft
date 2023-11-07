@@ -6,11 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:40:06 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 10:32:45 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:23:10 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <libft.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -26,7 +27,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char str[50] = "GeeksForGeeks is for programming geeks."; 
@@ -34,4 +35,4 @@ int	main(void)
 	printf("%s\n", str);
 	memset(str + 0, 'A', 8*sizeof(char)); 
 	printf("%s", str);
-}
+} */

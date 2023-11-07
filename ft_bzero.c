@@ -6,11 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:37:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 14:21:49 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:23:50 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <libft.h>
 
 void	*ft_bzero(void *s, size_t n)
 {

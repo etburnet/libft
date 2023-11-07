@@ -5,6 +5,7 @@
 		"ft_strncmp": "c",
 		"stdlib.h": "c",
 		"unistd.h": "c",
-		"functional": "c"
+		"functional": "c",
+		"libft.h": "c"
 	}
 }

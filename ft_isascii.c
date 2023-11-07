@@ -6,9 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:07:47 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 12:19:11 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:23:36 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_isascii(int c)
 {

@@ -6,11 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:34:48 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/06 19:45:41 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:22:26 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <libft.h>
 
 /* char my_function(unsigned int index, char c) {
 	if (index % 2 == 0)

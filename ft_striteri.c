@@ -6,15 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:17:57 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/17 11:56:46 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:22:44 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-void test_function(unsigned int index, char *c)
-{
-    printf("Index: %u, Character: %c\n", index, *c);
-} */
+#include <libft.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

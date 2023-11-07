@@ -6,9 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:07:24 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/09 18:43:23 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:22:36 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_strlen(char *str)
 {

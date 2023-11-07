@@ -6,11 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:31:44 by eburnet           #+#    #+#             */
-/*   Updated: 2023/10/09 17:24:14 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:23:13 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <libft.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
