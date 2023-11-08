@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:23:33 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 15:35:36 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:04:00 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	while (str[i] != '\0' && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
 		i++;
-	if (str[i] != '\0' && str[i] == '-')
+	if (str[i] != '\0' && (str[i] == '-' || str[i] == '+'))
 	{
-		isnegative *= -1;
+		if (str[i] == '-' )
+			isnegative *= -1;
 		i++;
 	}
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
@@ -42,6 +43,6 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main(void)
 {
-	printf("%d", ft_atoi("   -26fz5"));
-	//printf("%d", atoi("   -d1245salut"));
+	printf("%d\n", ft_atoi("+1"));
+	printf("%d", atoi("+1"));
 } */

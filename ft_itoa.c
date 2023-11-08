@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:35:40 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 17:14:31 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/08 00:26:13 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,47 @@
 
 int	ft_count_digits(int n)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	while (n != 0)
+	count = 1;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		count++;
+		n = -n;
+	}
+	while (n > 9)
 	{
 		n = n / 10;
-		i++;
+		count++;
 	}
-	if (i == 0)
-		i = 1;
-	return (i);
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		is_negative;
 	int		size;
 
 	size = ft_count_digits(n);
-	is_negative = (n < 0);
-	if (n == 0)
-		size = 1;
-	str = malloc(sizeof(char) * (size + is_negative + 1));
-	if (str == NULL)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (NULL);
-	str[size + is_negative] = '\0';
+	str[size] = '\0';
 	if (n < 0)
+	{
 		str[0] = '-';
-	if (n == 0)
+		n = -n;
+	}
+	else if (n == 0)
 		str[0] = '0';
 	while (n != 0)
 	{
-		str[size + is_negative - 1] = (n % 10) * (is_negative ? -1 : 1) + 48;
+		str[--size] = '0' + n % 10;
 		n = n / 10;
-		size--;
 	}
 	return (str);
 }
@@ -59,5 +64,5 @@ char	*ft_itoa(int n)
 /* #include <stdio.h>
 int main()
 {
-	printf("%s", ft_itoa(0));
+	printf("%s", ft_itoa(-2147483648));
 } */

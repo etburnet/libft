@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:35:07 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 14:11:32 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/08 19:37:11 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,30 @@
 
 char	*ft_strnstr(const char *str_a, const char *str_b, size_t n)
 {
-	char	*str;
-	char	*substr;
 	size_t	i;
 	size_t	j;
 
-	str = (char *)str_a;
-	substr = (char *)str_b;
 	i = 0;
-	j = 0;
-	while (str[i] != '\0' && j <= n)
+	while (str_a[i] != '\0' && i < n)
 	{
-		while (str[i] == substr[j] && j < n)
-		{
-			i++;
-			j++;
-		}
-		if (j == (size_t)ft_strlen(substr))
-			return (&str[i - j]);
 		j = 0;
+		while (str_a[i + j] == str_b[j] && str_b[j] != '\0' && (i + j) < n)
+			j++;
+		if (str_b[j] == '\0')
+			return ((char *)(str_a + i));
 		i++;
 	}
+	if (str_b[0] == '\0')
+		return ((char *)str_a);
 	return (NULL);
 }
 
 /* #include <stdio.h>
 int	main(void)
 {
-	char	*str_a = "Salut cv coucou gab, cv les gars ?";
-	char	*str_b = "cv";
-	int		size = 10;
+	char	haystack[30] = "Salut les gars";
+	char	needle[10] = "les";
+	size_t	size = 9;
 
-	printf("%s", ft_strnstr(str_a, str_b, size));
+	printf("%s", ft_strnstr(haystack, needle, size));
 } */

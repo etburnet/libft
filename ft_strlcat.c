@@ -6,34 +6,38 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:07:24 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 13:46:35 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/08 20:00:44 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dest, const char *src, int n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
-	int		destlen;
-	int		srclen;
-	int		total_len;
-	char	*sr;
+	size_t		i;
+	size_t		dst_len;
+	size_t		src_len;
+	size_t		total_len;
 
-	sr = (char *)src;
+
 	i = 0;
-	destlen = ft_strlen(dest);
-	srclen = ft_strlen(sr);
-	while (sr[i] && i < n)
+	src_len = ft_strlen((char *)src);
+	dst_len = ft_strlen(dst);
+	total_len = dst_len + src_len;
+	// Garantir que size est supérieur à 0
+	if (size == 0)
+		return total_len;
+
+	// Copier jusqu'à size - 1 caractères de src vers dst
+	while (dst_len < size - 1 && src[i])
 	{
-		dest[destlen + i] = sr[i];
+		dst[dst_len] = src[i];
+		dst_len++;
 		i++;
 	}
-	dest[destlen + i] = '\0';
-	total_len = destlen + srclen;
-	if (total_len >= n)
-		return (n);
-	return (total_len);
+	if (dst_len < size)
+		dst[dst_len] = '\0';
+	return total_len;
 }
 
 /* #include <stdio.h>
