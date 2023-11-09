@@ -6,119 +6,103 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:30:20 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/09 13:01:25 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 17:53:41 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-int	ft_count_words(char *s, char c)
+int	count_words(char *s, char c)
 {
-	int	word_count;
-	int	i;
+	int	count;
+	int	in_word;
 
-	word_count = 0;
+	count = 0;
+	in_word = 0;
+	while (*s)
+	{
+		if (*s == c)
+			in_word = 0;
+		else if (in_word == 0)
+		{
+			in_word = 1;
+			count++;
+		}
+		s++;
+	}
+	return (count);
+}
+
+char	*copy_word(char *s, char c)
+{
+	char	*word;
+	int		len;
+	int		i;
+
 	i = 0;
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[len] = '\0';
+	return (word);
+}
+
+void	process_word(char const *s, char c, char **result, int *j)
+{
+	int	i;
+	int	in_word;
+
+	i = 0;
+	in_word = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c && s[i] != '\0')
-			i++;
-		if (s[i] != '\0')
+		if (s[i] != c)
 		{
-			word_count++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
+			if (!in_word)
+			{
+				result[(*j)++] = copy_word((char *)(s + i), c);
+				if (!result[(*j) - 1])
+					return ;
+				in_word = 1;
+			}
 		}
+		else
+			in_word = 0;
+		i++;
 	}
-	return (word_count);
-}
-
-int	find_max_word_length(const char *str, char c)
-{
-	int	max_word_length;
-	int	word_length;
-	int	i;
-
-	max_word_length = 0;
-	word_length = 0;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		while (str[i] != c && str[i] != '\0')
-		{
-			word_length++;
-			i++;
-		}
-		if (word_length > max_word_length)
-			max_word_length = word_length;
-		if (str[i] != '\0')
-			i++;
-	}
-	return (max_word_length);
-}
-
-char	**ft_word_separator(char *str, char **result, char c)
-{
-	int		i;
-	int		j;
-	int		h;
-
-	i = 0;
-	j = 0;
-	h = 0;
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (str[i] == c && str[i] != '\0')
-			i++;
-		if (str[i] == '\0')
-			break ;
-		while (str[i] != c && str[i] != '\0')
-		{
-			result[h][j] = str[i];
-			i++;
-			j++;
-		}
-		result[h][j] = '\0';
-		h++;
-	}
-	result[h] = NULL;
-	return (result);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	*str;
 	int		word_count;
+	int		j;
 	char	**result;
-	int		i;
-	int		word_length;
 
-	i = 0;
-	str = (char *)s;
-	word_length = find_max_word_length(str, c);
-	word_count = ft_count_words(str, c);
-	result = NULL;
-	result = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (result == NULL)
+	j = 0;
+	if (!s)
 		return (NULL);
-	while (i <= word_count)
-	{
-		result[i] = NULL;
-		result[i] = (char *)malloc(word_length);
-		if (result[i] == NULL)
-			return (NULL);
-		i++;
-	}
-	return (ft_word_separator(str, result, c));
+	word_count = count_words((char *)s, c);
+	result = malloc(sizeof(char *) * (word_count + 1));
+	if (!result)
+		return (NULL);
+	process_word(s, c, result, &j);
+	result[word_count] = NULL;
+	return (result);
 }
 
 /* #include <stdio.h>
 int	main()
 {
-	char **result = ft_split("YO_cv__les__gars__", '_');
+	char **result = ft_split("YO cv les gars", '_');
 	int i = 0;
 	while (result[i] != NULL) {
 		printf("Partie %d : %s\n", i, result[i]);

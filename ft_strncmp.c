@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:11:05 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/09 10:30:32 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:35:03 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
+	if (ft_strlen((char *)s1) > ft_strlen((char *)s2))
+		return (1);
 	while (*s1 && *s1 == *s2 && i < n - 1)
 	{
 		s1++;
@@ -29,12 +31,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (*s1 - *s2);
 }
 
-/* #include <stdio.h>
+/* void	ft_print_result(int n)
+{
+	if (n > 0)
+		write(1, "1", 1);
+	else if (n < 0)
+		write(1, "-1", 2);
+	else
+		write(1, "0", 1);
+}
+
+#include <stdio.h>
 int	main(void)
 {
-	char	*str_a = "1234";
-	char	*str_b = "1235";
-	int		size = 3;
-
-	printf("%d", ft_strncmp(str_a, str_b, size));
+	ft_print_result(ft_strncmp("test\200", "test\0", 6));
 } */

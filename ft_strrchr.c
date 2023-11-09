@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 18:07:26 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/09 10:52:27 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:46:53 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,24 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*chr;
 	int		slen;
 
-	chr = (char *)s;
-	slen = ft_strlen(chr);
-	while (*chr != '\0' && slen >= 0)
+	slen = ft_strlen((char *)s);
+	while (slen >= 0)
 	{
-		if (chr[slen] == (char)c)
-			return (&chr[slen]);
+		if (s[slen] == (char)c)
+			return ((char *)&s[slen]);
 		slen--;
 	}
-	if (chr[slen] == (char)c)
-		return (&chr[slen]);
 	return (NULL);
 }
 
 /* #include <stdio.h>
 int	main(void)
 {
-	char	*s = "Salut les gens";
+	char	str2[] = "bonjour";
 	int		c;
 	
 	c = 108; //"l" ASCII
-	printf("%s", ft_strrchr(s, c));
+	printf("%s", ft_strrchr(str2, 's'));
 } */
