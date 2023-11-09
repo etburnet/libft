@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:31:44 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 12:56:59 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 12:56:55 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i = n;
 		while (i > 0)
 		{
-			d[i] = s[i];
 			i--;
+			d[i] = s[i];
 		}
 	}
 	return (dest);
@@ -45,8 +45,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 /* #include <stdio.h>
 int	main()
 {
-	char s1[] = "Salut, cv ?";
-	char s2[] = "Hey, sup guys ... ?";
-	memmove(s2, s1, 5);
-	printf ("%s", s2);
+	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
+	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
+	ft_memmove(sResult + 1, sResult2, 2);
+	printf ("%s", sResult);
 } */

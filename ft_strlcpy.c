@@ -6,40 +6,42 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:27:22 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 14:11:44 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 14:07:10 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	len;
-	char			*s;
+	size_t	i;
+	char	*s;
 
 	s = (char *)src;
 	i = 0;
-	len = ft_strlen(s);
-	while (s[i] && i < size - 1)
+	if (size > 0)
 	{
-		dst[i] = s[i];
-		i++;
-	}
-	dst[i] = '\0';
-	while (i < size)
-	{
+		while (s[i] && i < (size - 1))
+		{
+			dst[i] = s[i];
+			i++;
+		}
 		dst[i] = '\0';
-		i++;
 	}
-	return (len);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 /* #include <stdio.h>
 int main()
 {
-	char dest[15];
-	char src[] = "salut !";
-	printf("%d", ft_strlcpy(dest, src, 2));
+	char dest[10]; memset(dest, 'A', 10);
+	char src[] = "coucou";
+	printf("%s\n", dest);
+	printf("%s\n", src);
+	printf("%ld\n", ft_strlcpy(dest, src, -1));
+	printf("%d\n", !strcmp(src, dest));
+	printf("%s\n", dest);
+	printf("%s\n", src);
 } */
