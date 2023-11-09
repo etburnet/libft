@@ -6,14 +6,14 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:09:03 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 12:57:08 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 18:02:28 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putcharfd(char c, int fd)
+static void	ft_putcharfd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

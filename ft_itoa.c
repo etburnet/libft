@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:35:40 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/08 00:26:13 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 18:02:43 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-int	ft_count_digits(int n)
+static int	ft_count_digits(int n)
 {
 	int	count;
 

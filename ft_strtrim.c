@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:33:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 13:46:06 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 18:02:05 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_is_set(char c, char const *set)
+static int	ft_is_set(char c, char const *set)
 {
 	while (*set)
 	{

@@ -6,14 +6,14 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:30:20 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/09 17:53:41 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/09 18:01:51 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	count_words(char *s, char c)
+static int	ft_count_words(char *s, char c)
 {
 	int	count;
 	int	in_word;
@@ -34,7 +34,7 @@ int	count_words(char *s, char c)
 	return (count);
 }
 
-char	*copy_word(char *s, char c)
+static char	*ft_copy_word(char *s, char c)
 {
 	char	*word;
 	int		len;
@@ -56,7 +56,7 @@ char	*copy_word(char *s, char c)
 	return (word);
 }
 
-void	process_word(char const *s, char c, char **result, int *j)
+static void	ft_process_word(char const *s, char c, char **result, int *j)
 {
 	int	i;
 	int	in_word;
@@ -69,7 +69,7 @@ void	process_word(char const *s, char c, char **result, int *j)
 		{
 			if (!in_word)
 			{
-				result[(*j)++] = copy_word((char *)(s + i), c);
+				result[(*j)++] = ft_copy_word((char *)(s + i), c);
 				if (!result[(*j) - 1])
 					return ;
 				in_word = 1;
@@ -90,11 +90,11 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	if (!s)
 		return (NULL);
-	word_count = count_words((char *)s, c);
+	word_count = ft_count_words((char *)s, c);
 	result = malloc(sizeof(char *) * (word_count + 1));
 	if (!result)
 		return (NULL);
-	process_word(s, c, result, &j);
+	ft_process_word(s, c, result, &j);
 	result[word_count] = NULL;
 	return (result);
 }
