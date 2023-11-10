@@ -93,3 +93,4 @@ ft_toupper.o
 libft.a
 libft.h.gch
 libft-war-machine
+libft.so

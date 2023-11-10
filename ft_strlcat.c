@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:07:24 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/10 12:46:48 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 15:05:05 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t		total_len;
 
 	i = 0;
+	if ((dst == NULL || src == NULL) && size == 0)
+		return (0);
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	total_len = dst_len + src_len;
@@ -41,9 +43,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /* #include <stdio.h>
 int	main(void)
 {
-	char	dest[8] = "BBBB";
-	const char	*src = "AAAAAAAAA";
+	char b[0xF] = "nyan !";
 
-	printf("%ld\n", ft_strlcat(dest, src, 3));
-	printf("%s", dest);
+	printf("%ld\n", ft_strlcat(NULL, b, 0));
+	printf("%s", b);
 } */

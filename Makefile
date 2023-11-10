@@ -6,7 +6,7 @@
 #    By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 12:48:48 by eburnet           #+#    #+#              #
-#    Updated: 2023/11/07 21:20:08 by eburnet          ###   ########.fr        #
+#    Updated: 2023/11/10 15:05:54 by eburnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ HEADERS = libft.h
 
 .c.o: 
 	gcc $(CFLAGS) $(HEADERS) -c $<
+
+so:
+	gcc *.o --shared -o libft.so
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)

@@ -9,7 +9,11 @@
 		"libft.h": "c",
 		"array": "c",
 		"string_view": "c",
-		"type_traits": "c"
+		"type_traits": "c",
+		"initializer_list": "c",
+		"ranges": "c",
+		"span": "c",
+		"utility": "c"
 	},
 	"C_Cpp.errorSquiggles": "enabled"
 }

@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:35:07 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/08 19:37:11 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 15:05:38 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *str_a, const char *str_b, size_t n)
 	size_t	j;
 
 	i = 0;
+	if ((str_a == NULL || str_b == NULL) && n == 0)
+		return (0);
 	while (str_a[i] != '\0' && i < n)
 	{
 		j = 0;

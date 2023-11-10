@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:41:43 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/09 12:29:52 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 14:30:56 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	s = (char *)src;
 	d = (char *)dest;
 	i = 0;
+	if (s == NULL && d == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		d[i] = s[i];
@@ -33,8 +35,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /* #include <stdio.h>
 int	main()
 {
-	char str[50] = "GeeksForGeeks is for programming geeks.";
-	char str2[50];
+	char *str = NULL;
+	char str2[9];
 	ft_memcpy(str2, str, 5);
 	printf("%s", str2);
 } */

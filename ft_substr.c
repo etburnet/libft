@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:58:41 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/10 12:53:53 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 13:39:40 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (start > (unsigned int)ft_strlen(s))
+	if (!s)
 		return (NULL);
-	if (s == NULL || start > (unsigned int)ft_strlen(s))
-		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+	if (start >= ft_strlen(s))
+		len = 0;
+	else if (start > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	result = NULL;
 	result = malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
@@ -38,9 +38,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (result);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
-	char str[] = "Salut cv ou quoi ?";
-	printf("%s", ft_substr("tripouille", 2, 5));
-} */
+	printf("%s", ft_substr("Salut", 0, 2));
+}
