@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:33:50 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/09 18:02:05 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:51:42 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*trimmed;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	i = 0;
 	end = ft_strlen((char *)s1);
-	trimmed = NULL;
 	while (s1[start] && ft_is_set(s1[start], set))
 		start++;
 	while (end > start && ft_is_set(s1[end - 1], set))
@@ -46,10 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (trimmed == NULL)
 		return (NULL);
 	while (i <= total)
-	{
-		trimmed[i] = s1[start + i];
-		i++;
-	}
+		trimmed[i++] = s1[start++];
 	trimmed[total] = '\0';
 	return (trimmed);
 }

@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:58:41 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/10 13:39:40 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 17:05:36 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		len = 0;
-	else if (start > ft_strlen(s) - start)
+	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	result = NULL;
 	result = malloc(sizeof(char) * (len + 1));
@@ -38,8 +38,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (result);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
-	printf("%s", ft_substr("Salut", 0, 2));
-}
+	char * s = ft_substr("tripouille", 0, 42000);
+	strcmp(s, "tripouille");
+} */

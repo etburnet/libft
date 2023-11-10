@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:34:48 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/10 12:46:27 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:23:15 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	char	*newstr;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	str = (char *)s;
 	newstr = NULL;
