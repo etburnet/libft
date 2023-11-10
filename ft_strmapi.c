@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:34:48 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/08 11:11:38 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 12:46:27 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	str = (char *)s;
 	newstr = NULL;
-	newstr = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	newstr = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (newstr == NULL)
 		return (NULL);
 	while (str[i] != '\0')

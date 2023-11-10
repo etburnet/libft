@@ -6,25 +6,28 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:12:08 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 12:57:31 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 12:41:36 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
+	{
 		i++;
+		str++;
+	}
 	return (i);
 }
 
-/*int main(void)
+/* #include <stdio.h>
+int main(void)
 {
-	printf("%d", ft_strlen("salut"));
+	printf("%ld", ft_strlen("salut"));
 	return 0;
-}
-*/
+} */

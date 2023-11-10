@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:25:51 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/07 13:46:57 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/10 12:48:52 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s)
 	char	*cpy;
 
 	str = (char *)s;
-	slen = ft_strlen(str);
+	slen = ft_strlen(s);
 	cpy = (char *)malloc(slen + 1);
 	i = 0;
 	if (cpy == NULL)
