@@ -95,3 +95,6 @@ libft.h.gch
 libft-war-machine
 libft.so
 libft-unit-test
+ft_put_count.o
+ft_printf.o
+ft_printf.h.gch

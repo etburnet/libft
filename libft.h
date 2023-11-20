@@ -6,14 +6,22 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:06:52 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/10 12:39:04 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:42:28 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <unistd.h>
+# include <stdarg.h>
 
+int		ft_printf(const char *format, ...);
+int		ft_putchar(char c);
+int		ft_putnbr_base(unsigned long int n, char *base);
+int		ft_putnbr_unsigned(unsigned int n);
+int		ft_putnbr(int n);
+int		ft_putstr(char *s);
 int		ft_atoi(const char *nptr);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -48,4 +56,5 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	ft_tolower(char c);
 char	ft_toupper(char c);
+
 #endif /* #ifndef LIBFT_H */

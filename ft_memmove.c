@@ -6,11 +6,10 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 14:31:44 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/10 15:48:29 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:43:29 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 char	*ft_work(char *d, char *s, size_t n)
