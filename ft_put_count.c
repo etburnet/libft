@@ -6,11 +6,10 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:38:09 by eburnet           #+#    #+#             */
-/*   Updated: 2023/11/20 14:39:37 by eburnet          ###   ########.fr       */
+/*   Updated: 2023/11/21 11:04:05 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
 
 static int	ft_count_digits(long long int n)
