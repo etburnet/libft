@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:30:20 by eburnet           #+#    #+#             */
-/*   Updated: 2024/06/07 17:04:30 by eburnet          ###   ########.fr       */
+/*   Updated: 2024/06/07 17:23:57 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	if (ft_process_word(s, c, result, &j) == -1)
-		return(NULL);
+		return (NULL);
 	result[word_count] = NULL;
 	return (result);
 }
